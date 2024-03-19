@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: xerothermic-condor-java-springboot-gitops
+  description: This is GitOps manifest for xerothermic-condor-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: xerothermic-condor-java-springboot
+    janus-idp.io/tekton: xerothermic-condor-java-springboot 
+    backstage.io/kubernetes-id: xerothermic-condor-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:xerothermic-condor-java-springboot
